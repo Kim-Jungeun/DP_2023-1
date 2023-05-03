@@ -11,6 +11,9 @@ public class Main {
         MessageBox mbox = new MessageBox('*');
         MessageBox sbox = new MessageBox('/');
 
+        //복사 생성자 호출
+        MessageBox copyofBox = new MessageBox(sbox);
+        copyofBox.use("Jungeun");
         // 登録
         manager.register("strong message", upen);
         manager.register("warning box", mbox);

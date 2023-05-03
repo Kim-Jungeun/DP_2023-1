@@ -1,0 +1,52 @@
+package ch10.practicecopy;
+import java.util.Random;
+
+public class ProbStrategy implements Strategy {
+    private Random random;
+    private int prevHandValue = 0;
+    private int currentHandValue = 0;
+    //배열인데 보통 배열과달리 대괄호 두개있는 2차원 배열
+    private int[][] history = {
+        { 1, 1, 1, },
+        { 1, 1, 1, },
+        { 1, 1, 1, },
+    };
+
+    public ProbStrategy(int seed) {
+        random = new Random(seed);
+    }
+
+    @Override
+    public Hand nextHand() {
+        int bet = random.nextInt(getSum(currentHandValue));
+        int handvalue = 0;
+        if (bet < history[currentHandValue][0]) {//구간을 확인함
+            handvalue = 0;
+        } else if (bet < history[currentHandValue][0] + history[currentHandValue][1]) {
+            handvalue = 1;
+        } else {
+            handvalue = 2;
+        }
+        prevHandValue = currentHandValue;
+        currentHandValue = handvalue;
+        return Hand.getHand(handvalue);
+    }
+
+    private int getSum(int handvalue) {//지정 행을 다 더해줌
+        int sum = 0;
+        for (int i = 0; i < 3; i++) {
+            sum += history[handvalue][i];
+        }
+        return sum;
+    }
+
+    @Override
+    public void study(boolean win) {
+        if (win) {//이겼다고 알려줬을때 실행
+            history[prevHandValue][currentHandValue]++;
+        } else {//졌다고 알려줬을때 실행
+            history[prevHandValue][(currentHandValue + 1) % 3]++;
+            history[prevHandValue][(currentHandValue + 2) % 3]++;
+        }
+    }
+}

@@ -5,8 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
 
-public class FileProperties implements FileIO {
-    Properties property = new Properties();
+public class FileProperties implements FileIO {//어댑터(위임이용한거)
+    Properties property = new Properties();//어댑티
 
     @Override
     public void readFromFile(String filename) throws IOException {

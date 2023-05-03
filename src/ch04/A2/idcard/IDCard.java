@@ -6,7 +6,7 @@ public class IDCard extends Product {
     private String owner;
     private int serial;
 
-    IDCard(String owner, int serial) {
+    IDCard(String owner, int serial) {    
         System.out.println(owner + "의 카드를 " + serial + "번으로 만듭니다.");
         this.owner = owner;
         this.serial = serial;

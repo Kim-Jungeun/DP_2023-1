@@ -1,0 +1,7 @@
+#written by FileProperties
+#Sun Mar 26 22:33:55 KST 2023
+bornyear=2001
+location=Seoul
+name=Kimjungeun
+studentid=20210934
+year=2023

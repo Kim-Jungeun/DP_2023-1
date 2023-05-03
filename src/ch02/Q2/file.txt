@@ -1,1 +1,4 @@
 width=640
+hight=100
+name=kje
+age=23

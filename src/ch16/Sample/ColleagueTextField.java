@@ -23,12 +23,12 @@ public class ColleagueTextField extends TextField implements TextListener, Colle
     public void setColleagueEnabled(boolean enabled) {
         setEnabled(enabled);
         // 활성/비활성에 맞게 배경색을 변경한다
-        setBackground(enabled ? Color.white : Color.lightGray);
+        setBackground(enabled ? Color.white : Color.lightGray);//물음표 앞에 있는 조건에따라 참이면 앞이 결과 , 거짓이면 뒤가 결과
     }
 
     @Override
     public void textValueChanged(TextEvent e) {
-        // 문자열이 변화했으면 Mediator에 알린다
+        // 문자열이 변화했으면 Mediator에 알린다!!!!!!!!!!!!중재자 패턴의 핵심
         mediator.colleagueChanged();
     }
 }

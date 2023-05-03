@@ -2,7 +2,7 @@ package ch10.A1;
 
 public enum Hand {
     // 가위 바위 보를 나타내는 세 개의 enum 상수
-    ROCK("바위", 0),
+    ROCK("바위", 0),//1개만 만들어진다
     SCISSORS("가위", 1),
     PAPER("보", 2);
 
@@ -38,7 +38,7 @@ public enum Hand {
 
     // 무승부는 0, this가 이기면 1, h가 이기면 -1
     private int fight(Hand h) {
-        if (this == h) {
+        if (this == h) {//현재손과 
             return 0;
         } else if ((this.handvalue + 1) % 3 == h.handvalue) {
             return 1;

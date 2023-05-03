@@ -1,0 +1,7 @@
+#written by FileProperties
+#Tue Mar 21 11:47:02 KST 2023
+age=23
+depth=32
+height=512
+name=kje
+width=1024
