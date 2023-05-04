@@ -12,9 +12,9 @@ public class MultiStringDisplay extends Display {
     // 문자열 추가 
     public void add(String msg) {
         body.add(msg);
-        if (columns < msg.length()) {//현재 더 긴 문자열이 추가된다면..
+        if (columns < msg.codePointCount(0, msg.length())) {//현재 더 긴 문자열이 추가된다면..
             // 최대 문자 수 갱신
-            columns = msg.length();
+            columns = msg.codePointCount(0, msg.length());
         }
         updatePadding();//짧은거에 문자를 더 붙여서 전체적인 길이를 같게 만들어줌
     }

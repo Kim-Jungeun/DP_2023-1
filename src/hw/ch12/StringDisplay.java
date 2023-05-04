@@ -1,7 +1,10 @@
 package hw.ch12;
 
+import java.nio.charset.StandardCharsets;
+
 public class StringDisplay extends Display {
     private String string; // 표시 문자열 
+    private int columns=0;
 
     public StringDisplay(String string) {
         this.string = string;
@@ -9,6 +12,7 @@ public class StringDisplay extends Display {
 
     @Override
     public int getColumns() {
+        // return string.getBytes(StandardCharsets.UTF_8).length;
         return string.length();
     }
 
